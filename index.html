@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reflex Rush — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 32px 20px 80px;
+    line-height: 1.65; color: #1c1c1e; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e5e5e7; background: #1c1c1e; } }
+  h1 { font-size: 1.9rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  .meta { color: #6e6e73; font-size: .9rem; margin-bottom: 28px; }
+  select {
+    font-size: 1rem; padding: 8px 12px; border-radius: 10px;
+    border: 1px solid #c7c7cc; background: transparent; color: inherit; margin-bottom: 28px;
+  }
+  a { color: #0a84ff; }
+  footer { margin-top: 48px; font-size: .85rem; color: #6e6e73; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     COMPILA SOLO QUESTE TRE RIGHE. Valgono per tutte le lingue.
+     ══════════════════════════════════════════════════════════════════ -->
+<script>
+const DEVELOPER = "Hakim Gaera (Reflex Rush)";
+const EMAIL     = "reflexrush@outlook.com";
+const UPDATED   = "16/08/2026";
+</script>
+
+<select id="lang" aria-label="Language"></select>
+<div id="content"></div>
+
+<script>
+const T = {
+en: { name:"English", title:"Privacy Policy", updated:"Last updated",
+ intro:`This policy explains what Reflex Rush ("the app") does with your information. The app is published by ${DEVELOPER}. For any question you can write to <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"What the app stores on your device", p1:"Your high scores, chosen difficulty, game mode, language, theme, sound volume and vibration setting are saved on your device only. They are never sent to us and we cannot see them. Deleting the app deletes them.",
+ h2:"Advertising", p2:`The app shows ads through Google AdMob. To do this, Google may collect your device's advertising identifier, IP address (which gives an approximate location), which ads you saw and how you interacted with them, plus crash and performance information. We never receive this data ourselves. How Google uses it is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.`,
+ h3:"Tracking permission", p3:"The first time you open the app, iOS asks whether you allow tracking. If you say no, you will still see the same number of ads, but they will not be personalised. You can change your answer at any time in iOS Settings → Privacy & Security → Tracking.",
+ h4:"Purchases", p4:"If you buy the ad-free unlock, the payment is handled entirely by Apple. We never see your name, card details or address — only whether the purchase is active on your device.",
+ h5:"Children", p5:"The app is not directed at children under 13, and we do not knowingly collect information from them. If you believe a child has provided data, please contact us and we will address it.",
+ h6:"Your rights", p6:"Since we hold no personal data ourselves, there is nothing on our side to access or delete. You can reset the advertising identifier or withdraw tracking consent in iOS Settings, and remove all locally stored data by deleting the app. If you are in the EU or UK, you may also contact your local data protection authority.",
+ h7:"Changes", p7:"If this policy changes, the updated version will appear on this page with a new date.",
+ h8:"Contact", p8:`Questions about this policy: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Support`, q1:`How do I get help?`, a1:`Email <a href="mailto:${EMAIL}">${EMAIL}</a> and describe the problem. Mentioning your device and iOS version helps.`, q2:`I bought Remove Ads but they came back`, a2:`Open Settings in the game and tap Restore Purchases. Purchases follow your Apple Account, so this also works on a new device.`, q3:`How does the free ad-free time work?`, a3:`Tap the gift icon and watch a video to get 10 minutes without ads. You can do this twice a day. The icon turns grey while the time is running or once both videos are used.`, q4:`Where is Cat Mode?`, a4:`Cat Mode is in Settings and appears on iPad only — a phone screen is too small for a paw. Hold the paw icon for 5 seconds to leave a session.`, q5:`How do I delete my data?`, a5:`Delete the app. Scores and settings are stored only on your device, so nothing is left behind.` },
+
+it: { name:"Italiano", title:"Informativa sulla privacy", updated:"Ultimo aggiornamento",
+ intro:`Questa informativa spiega cosa fa Reflex Rush ("l'app") con le tue informazioni. L'app è pubblicata da ${DEVELOPER}. Per qualsiasi domanda puoi scrivere a <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Cosa l'app salva sul tuo dispositivo", p1:"Punteggi, difficoltà scelta, modalità di gioco, lingua, tema, volume e impostazione della vibrazione sono salvati solo sul tuo dispositivo. Non vengono mai inviati a noi e non possiamo vederli. Disinstallando l'app vengono eliminati.",
+ h2:"Pubblicità", p2:`L'app mostra annunci tramite Google AdMob. Per farlo, Google può raccogliere l'identificatore pubblicitario del dispositivo, l'indirizzo IP (che indica una posizione approssimativa), quali annunci hai visto e come hai interagito, oltre a dati su crash e prestazioni. Questi dati non arrivano mai a noi. L'uso che ne fa Google è descritto nelle <a href="https://policies.google.com/privacy">Norme sulla privacy di Google</a>.`,
+ h3:"Permesso di tracciamento", p3:"Alla prima apertura, iOS ti chiede se autorizzi il tracciamento. Se rifiuti, vedrai lo stesso numero di annunci, ma non personalizzati. Puoi cambiare idea in qualsiasi momento in Impostazioni iOS → Privacy e sicurezza → Tracciamento.",
+ h4:"Acquisti", p4:"Se acquisti la rimozione della pubblicità, il pagamento è gestito interamente da Apple. Non vediamo mai il tuo nome, i dati della carta o il tuo indirizzo: sappiamo solo se l'acquisto è attivo sul dispositivo.",
+ h5:"Minori", p5:"L'app non è rivolta a minori di 13 anni e non raccogliamo consapevolmente dati da loro. Se ritieni che un minore abbia fornito dati, contattaci e interverremo.",
+ h6:"I tuoi diritti", p6:"Poiché non conserviamo dati personali, non c'è nulla da consultare o cancellare presso di noi. Puoi reimpostare l'identificatore pubblicitario o revocare il consenso al tracciamento nelle Impostazioni iOS, ed eliminare tutti i dati locali disinstallando l'app. Se ti trovi nell'UE, puoi anche rivolgerti al Garante per la protezione dei dati personali.",
+ h7:"Modifiche", p7:"Se questa informativa cambia, la versione aggiornata comparirà su questa pagina con una nuova data.",
+ h8:"Contatti", p8:`Domande su questa informativa: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Supporto`, q1:`Come chiedo aiuto?`, a1:`Scrivi a <a href="mailto:${EMAIL}">${EMAIL}</a> descrivendo il problema. Indicare modello del dispositivo e versione di iOS aiuta.`, q2:`Ho comprato la rimozione della pubblicità ma è tornata`, a2:`Apri Impostazioni nel gioco e tocca Ripristina acquisti. Gli acquisti seguono il tuo Account Apple, quindi funziona anche su un nuovo dispositivo.`, q3:`Come funzionano i minuti senza pubblicità?`, a3:`Tocca l'icona regalo e guarda un video per ottenere 10 minuti senza pubblicità. Puoi farlo due volte al giorno. L'icona diventa grigia mentre il tempo scorre o quando hai usato entrambi i video.`, q4:`Dov'è la modalità gatto?`, a4:`La modalità gatto è nelle Impostazioni e compare solo su iPad: lo schermo di un telefono è troppo piccolo per una zampa. Tieni premuta la zampa 5 secondi per uscire da una sessione.`, q5:`Come cancello i miei dati?`, a5:`Disinstalla l'app. Punteggi e impostazioni sono salvati solo sul tuo dispositivo, quindi non resta nulla.` },
+
+es: { name:"Español", title:"Política de privacidad", updated:"Última actualización",
+ intro:`Esta política explica qué hace Reflex Rush ("la app") con tu información. La app es publicada por ${DEVELOPER}. Para cualquier duda puedes escribir a <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Qué guarda la app en tu dispositivo", p1:"Tus puntuaciones, la dificultad elegida, el modo de juego, el idioma, el tema, el volumen y el ajuste de vibración se guardan solo en tu dispositivo. Nunca se nos envían y no podemos verlos. Al desinstalar la app se eliminan.",
+ h2:"Publicidad", p2:`La app muestra anuncios mediante Google AdMob. Para ello, Google puede recopilar el identificador de publicidad del dispositivo, la dirección IP (que indica una ubicación aproximada), qué anuncios has visto y cómo has interactuado, además de datos de fallos y rendimiento. Nosotros nunca recibimos estos datos. El uso que hace Google se describe en la <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>.`,
+ h3:"Permiso de seguimiento", p3:"La primera vez que abres la app, iOS te pregunta si permites el seguimiento. Si dices que no, verás la misma cantidad de anuncios, pero no serán personalizados. Puedes cambiar tu respuesta en Ajustes de iOS → Privacidad y seguridad → Seguimiento.",
+ h4:"Compras", p4:"Si compras la eliminación de anuncios, el pago lo gestiona íntegramente Apple. Nunca vemos tu nombre, los datos de tu tarjeta ni tu dirección: solo si la compra está activa en tu dispositivo.",
+ h5:"Menores", p5:"La app no está dirigida a menores de 13 años y no recopilamos conscientemente datos de ellos. Si crees que un menor ha facilitado datos, contáctanos y lo resolveremos.",
+ h6:"Tus derechos", p6:"Como no conservamos datos personales, no hay nada que consultar ni eliminar por nuestra parte. Puedes restablecer el identificador de publicidad o retirar el consentimiento de seguimiento en los Ajustes de iOS, y borrar todos los datos locales desinstalando la app. Si estás en la UE, también puedes dirigirte a tu autoridad de protección de datos.",
+ h7:"Cambios", p7:"Si esta política cambia, la versión actualizada aparecerá en esta página con una fecha nueva.",
+ h8:"Contacto", p8:`Preguntas sobre esta política: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Soporte`, q1:`¿Cómo pido ayuda?`, a1:`Escribe a <a href="mailto:${EMAIL}">${EMAIL}</a> describiendo el problema. Indicar el modelo del dispositivo y la versión de iOS ayuda.`, q2:`Compré quitar anuncios y han vuelto`, a2:`Abre Ajustes en el juego y toca Restaurar compras. Las compras están vinculadas a tu Cuenta de Apple, así que también funciona en un dispositivo nuevo.`, q3:`¿Cómo funcionan los minutos sin anuncios?`, a3:`Toca el icono de regalo y mira un vídeo para obtener 10 minutos sin anuncios. Puedes hacerlo dos veces al día. El icono se vuelve gris mientras corre el tiempo o cuando has usado ambos vídeos.`, q4:`¿Dónde está el modo gato?`, a4:`El modo gato está en Ajustes y solo aparece en iPad: la pantalla de un móvil es demasiado pequeña para una pata. Mantén pulsada la huella 5 segundos para salir.`, q5:`¿Cómo borro mis datos?`, a5:`Desinstala la app. Las puntuaciones y los ajustes se guardan solo en tu dispositivo, así que no queda nada.` },
+
+fr: { name:"Français", title:"Politique de confidentialité", updated:"Dernière mise à jour",
+ intro:`Cette politique explique ce que Reflex Rush (« l'app ») fait de vos informations. L'app est publiée par ${DEVELOPER}. Pour toute question, écrivez à <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Ce que l'app enregistre sur votre appareil", p1:"Vos scores, la difficulté choisie, le mode de jeu, la langue, le thème, le volume et le réglage des vibrations sont enregistrés uniquement sur votre appareil. Ils ne nous sont jamais envoyés et nous ne pouvons pas les voir. Supprimer l'app les efface.",
+ h2:"Publicité", p2:`L'app affiche des publicités via Google AdMob. Pour cela, Google peut collecter l'identifiant publicitaire de l'appareil, l'adresse IP (qui donne une localisation approximative), les publicités vues et vos interactions, ainsi que des données de plantage et de performance. Nous ne recevons jamais ces données. L'usage qu'en fait Google est décrit dans les <a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a>.`,
+ h3:"Autorisation de suivi", p3:"À la première ouverture, iOS vous demande si vous autorisez le suivi. Si vous refusez, vous verrez le même nombre de publicités, mais elles ne seront pas personnalisées. Vous pouvez changer d'avis dans Réglages iOS → Confidentialité et sécurité → Suivi.",
+ h4:"Achats", p4:"Si vous achetez la suppression des publicités, le paiement est entièrement géré par Apple. Nous ne voyons jamais votre nom, vos données bancaires ni votre adresse — seulement si l'achat est actif sur votre appareil.",
+ h5:"Enfants", p5:"L'app ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment leurs données. Si vous pensez qu'un enfant a fourni des données, contactez-nous et nous interviendrons.",
+ h6:"Vos droits", p6:"Comme nous ne conservons aucune donnée personnelle, il n'y a rien à consulter ou à supprimer de notre côté. Vous pouvez réinitialiser l'identifiant publicitaire ou retirer votre consentement au suivi dans les Réglages iOS, et effacer toutes les données locales en supprimant l'app. Dans l'UE, vous pouvez aussi saisir votre autorité de protection des données.",
+ h7:"Modifications", p7:"Si cette politique change, la version mise à jour apparaîtra sur cette page avec une nouvelle date.",
+ h8:"Contact", p8:`Questions sur cette politique : <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Assistance`, q1:`Comment obtenir de l'aide ?`, a1:`Écrivez à <a href="mailto:${EMAIL}">${EMAIL}</a> en décrivant le problème. Préciser le modèle de l'appareil et la version d'iOS aide.`, q2:`J'ai acheté la suppression des pubs mais elles sont revenues`, a2:`Ouvrez Réglages dans le jeu et touchez Restaurer les achats. Les achats sont liés à votre compte Apple, cela fonctionne donc aussi sur un nouvel appareil.`, q3:`Comment fonctionnent les minutes sans pub ?`, a3:`Touchez l'icône cadeau et regardez une vidéo pour obtenir 10 minutes sans publicité. Deux fois par jour maximum. L'icône devient grise pendant le décompte ou une fois les deux vidéos utilisées.`, q4:`Où est le mode chat ?`, a4:`Le mode chat est dans les Réglages et n'apparaît que sur iPad — l'écran d'un téléphone est trop petit pour une patte. Maintenez la patte 5 secondes pour quitter.`, q5:`Comment supprimer mes données ?`, a5:`Supprimez l'app. Les scores et réglages sont stockés uniquement sur votre appareil, il ne reste rien.` },
+
+de: { name:"Deutsch", title:"Datenschutzerklärung", updated:"Zuletzt aktualisiert",
+ intro:`Diese Erklärung beschreibt, was Reflex Rush („die App") mit deinen Informationen macht. Die App wird von ${DEVELOPER} veröffentlicht. Bei Fragen schreibe an <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Was die App auf deinem Gerät speichert", p1:"Deine Punktzahlen, die gewählte Schwierigkeit, der Spielmodus, die Sprache, das Erscheinungsbild, die Lautstärke und die Vibrationseinstellung werden nur auf deinem Gerät gespeichert. Sie werden nie an uns gesendet und wir können sie nicht sehen. Beim Löschen der App werden sie entfernt.",
+ h2:"Werbung", p2:`Die App zeigt Werbung über Google AdMob. Dazu kann Google die Werbe-ID des Geräts, die IP-Adresse (die einen ungefähren Standort ergibt), gesehene Anzeigen und deine Interaktionen sowie Absturz- und Leistungsdaten erfassen. Wir erhalten diese Daten nie. Wie Google sie verwendet, steht in der <a href="https://policies.google.com/privacy">Google-Datenschutzerklärung</a>.`,
+ h3:"Tracking-Erlaubnis", p3:"Beim ersten Öffnen fragt iOS, ob du Tracking erlaubst. Lehnst du ab, siehst du gleich viele Anzeigen, sie sind aber nicht personalisiert. Du kannst deine Antwort jederzeit unter iOS-Einstellungen → Datenschutz & Sicherheit → Tracking ändern.",
+ h4:"Käufe", p4:"Wenn du die Werbefreiheit kaufst, wickelt Apple die Zahlung vollständig ab. Wir sehen niemals deinen Namen, deine Kartendaten oder deine Adresse — nur, ob der Kauf auf deinem Gerät aktiv ist.",
+ h5:"Kinder", p5:"Die App richtet sich nicht an Kinder unter 13 Jahren und wir erheben wissentlich keine Daten von ihnen. Wenn du glaubst, dass ein Kind Daten übermittelt hat, kontaktiere uns und wir kümmern uns darum.",
+ h6:"Deine Rechte", p6:"Da wir selbst keine personenbezogenen Daten speichern, gibt es bei uns nichts einzusehen oder zu löschen. Du kannst die Werbe-ID zurücksetzen oder die Tracking-Einwilligung in den iOS-Einstellungen widerrufen und alle lokalen Daten durch Löschen der App entfernen. In der EU kannst du dich auch an deine Datenschutzbehörde wenden.",
+ h7:"Änderungen", p7:"Bei Änderungen erscheint die aktualisierte Fassung mit neuem Datum auf dieser Seite.",
+ h8:"Kontakt", p8:`Fragen zu dieser Erklärung: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Support`, q1:`Wie bekomme ich Hilfe?`, a1:`Schreibe an <a href="mailto:${EMAIL}">${EMAIL}</a> und beschreibe das Problem. Angaben zu Gerät und iOS-Version helfen.`, q2:`Ich habe Werbung entfernen gekauft, sie ist aber zurück`, a2:`Öffne die Einstellungen im Spiel und tippe auf Käufe wiederherstellen. Käufe hängen an deinem Apple-Account und funktionieren daher auch auf einem neuen Gerät.`, q3:`Wie funktionieren die werbefreien Minuten?`, a3:`Tippe auf das Geschenksymbol und sieh dir ein Video an, um 10 Minuten ohne Werbung zu erhalten. Zweimal täglich möglich. Das Symbol wird grau, solange die Zeit läuft oder wenn beide Videos verbraucht sind.`, q4:`Wo ist der Katzenmodus?`, a4:`Der Katzenmodus steht in den Einstellungen und erscheint nur auf dem iPad — ein Handybildschirm ist zu klein für eine Pfote. Halte die Pfote 5 Sekunden gedrückt, um zu beenden.`, q5:`Wie lösche ich meine Daten?`, a5:`Lösche die App. Punktzahlen und Einstellungen liegen nur auf deinem Gerät, es bleibt nichts zurück.` },
+
+pt: { name:"Português", title:"Política de Privacidade", updated:"Última atualização",
+ intro:`Esta política explica o que o Reflex Rush ("o app") faz com as suas informações. O app é publicado por ${DEVELOPER}. Para qualquer dúvida, escreva para <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"O que o app guarda no seu dispositivo", p1:"As suas pontuações, a dificuldade escolhida, o modo de jogo, o idioma, o tema, o volume e a definição de vibração são guardados apenas no seu dispositivo. Nunca nos são enviados e não podemos vê-los. Ao desinstalar o app, são eliminados.",
+ h2:"Publicidade", p2:`O app mostra anúncios através do Google AdMob. Para isso, a Google pode recolher o identificador de publicidade do dispositivo, o endereço IP (que dá uma localização aproximada), que anúncios viu e como interagiu, além de dados de falhas e desempenho. Nós nunca recebemos estes dados. A utilização pela Google está descrita na <a href="https://policies.google.com/privacy">Política de Privacidade da Google</a>.`,
+ h3:"Permissão de rastreio", p3:"Na primeira abertura, o iOS pergunta se permite o rastreio. Se recusar, verá a mesma quantidade de anúncios, mas não personalizados. Pode mudar a resposta em Definições do iOS → Privacidade e Segurança → Rastreio.",
+ h4:"Compras", p4:"Se comprar a remoção de anúncios, o pagamento é tratado inteiramente pela Apple. Nunca vemos o seu nome, dados do cartão ou morada — apenas se a compra está ativa no seu dispositivo.",
+ h5:"Crianças", p5:"O app não se destina a menores de 13 anos e não recolhemos conscientemente dados deles. Se acredita que uma criança forneceu dados, contacte-nos e trataremos disso.",
+ h6:"Os seus direitos", p6:"Como não guardamos dados pessoais, não há nada a consultar ou eliminar do nosso lado. Pode repor o identificador de publicidade ou retirar o consentimento de rastreio nas Definições do iOS, e apagar todos os dados locais desinstalando o app. Na UE, pode também contactar a sua autoridade de proteção de dados.",
+ h7:"Alterações", p7:"Se esta política mudar, a versão atualizada aparecerá nesta página com uma nova data.",
+ h8:"Contacto", p8:`Questões sobre esta política: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Suporte`, q1:`Como peço ajuda?`, a1:`Escreva para <a href="mailto:${EMAIL}">${EMAIL}</a> descrevendo o problema. Indicar o modelo do dispositivo e a versão do iOS ajuda.`, q2:`Comprei a remoção de anúncios mas eles voltaram`, a2:`Abra os Ajustes no jogo e toque em Restaurar compras. As compras ficam ligadas à sua Conta Apple, por isso também funciona num dispositivo novo.`, q3:`Como funcionam os minutos sem anúncios?`, a3:`Toque no ícone de presente e veja um vídeo para obter 10 minutos sem anúncios. Pode fazê-lo duas vezes por dia. O ícone fica cinzento enquanto o tempo corre ou quando já usou os dois vídeos.`, q4:`Onde está o modo gato?`, a4:`O modo gato está nos Ajustes e aparece apenas no iPad — o ecrã de um telemóvel é pequeno demais para uma pata. Segure a pata 5 segundos para sair.`, q5:`Como apago os meus dados?`, a5:`Desinstale o app. Pontuações e definições ficam apenas no seu dispositivo, não sobra nada.` },
+
+hi: { name:"हिन्दी", title:"गोपनीयता नीति", updated:"अंतिम अद्यतन",
+ intro:`यह नीति बताती है कि Reflex Rush ("ऐप") आपकी जानकारी के साथ क्या करता है। ऐप ${DEVELOPER} द्वारा प्रकाशित है। किसी भी प्रश्न के लिए <a href="mailto:${EMAIL}">${EMAIL}</a> पर लिखें।`,
+ h1:"ऐप आपके डिवाइस पर क्या सहेजता है", p1:"आपके स्कोर, चुनी गई कठिनाई, गेम मोड, भाषा, थीम, वॉल्यूम और कंपन सेटिंग केवल आपके डिवाइस पर सहेजे जाते हैं। ये कभी हमें नहीं भेजे जाते और हम इन्हें नहीं देख सकते। ऐप हटाने पर ये मिट जाते हैं।",
+ h2:"विज्ञापन", p2:`ऐप Google AdMob के माध्यम से विज्ञापन दिखाता है। इसके लिए Google आपके डिवाइस की विज्ञापन आईडी, आईपी पता (जो अनुमानित स्थान बताता है), आपने कौन-से विज्ञापन देखे और कैसे प्रतिक्रिया दी, तथा क्रैश और प्रदर्शन संबंधी जानकारी एकत्र कर सकता है। यह डेटा कभी हम तक नहीं पहुँचता। Google इसका उपयोग कैसे करता है, यह <a href="https://policies.google.com/privacy">Google गोपनीयता नीति</a> में बताया गया है।`,
+ h3:"ट्रैकिंग अनुमति", p3:"पहली बार ऐप खोलने पर iOS पूछता है कि क्या आप ट्रैकिंग की अनुमति देते हैं। मना करने पर भी आपको उतने ही विज्ञापन दिखेंगे, पर वे व्यक्तिगत नहीं होंगे। आप कभी भी iOS सेटिंग्स → गोपनीयता और सुरक्षा → ट्रैकिंग में बदल सकते हैं।",
+ h4:"खरीदारी", p4:"यदि आप विज्ञापन हटाने की खरीदारी करते हैं, तो भुगतान पूरी तरह Apple संभालता है। हम आपका नाम, कार्ड विवरण या पता कभी नहीं देखते — केवल यह कि खरीद आपके डिवाइस पर सक्रिय है या नहीं।",
+ h5:"बच्चे", p5:"यह ऐप 13 वर्ष से कम आयु के बच्चों के लिए नहीं है और हम जानबूझकर उनसे डेटा एकत्र नहीं करते। यदि आपको लगता है कि किसी बच्चे ने डेटा दिया है, तो हमसे संपर्क करें।",
+ h6:"आपके अधिकार", p6:"चूँकि हम कोई व्यक्तिगत डेटा नहीं रखते, हमारी ओर से देखने या हटाने के लिए कुछ नहीं है। आप iOS सेटिंग्स में विज्ञापन आईडी रीसेट कर सकते हैं या ट्रैकिंग सहमति वापस ले सकते हैं, और ऐप हटाकर सारा स्थानीय डेटा मिटा सकते हैं।",
+ h7:"परिवर्तन", p7:"यदि यह नीति बदलती है, तो अद्यतन संस्करण नई तारीख के साथ इसी पृष्ठ पर दिखाई देगा।",
+ h8:"संपर्क", p8:`इस नीति के बारे में प्रश्न: <a href="mailto:${EMAIL}">${EMAIL}</a>।`, sup:`सहायता`, q1:`मदद कैसे मिलेगी?`, a1:`<a href="mailto:${EMAIL}">${EMAIL}</a> पर समस्या बताते हुए लिखें। डिवाइस मॉडल और iOS संस्करण बताना उपयोगी होता है।`, q2:`मैंने विज्ञापन हटाना खरीदा था पर वे वापस आ गए`, a2:`गेम में सेटिंग्स खोलें और 'खरीदारी पुनर्स्थापित करें' दबाएँ। खरीदारी आपके Apple खाते से जुड़ी होती है, इसलिए यह नए डिवाइस पर भी काम करती है।`, q3:`विज्ञापन-मुक्त मिनट कैसे काम करते हैं?`, a3:`उपहार आइकन दबाएँ और वीडियो देखकर 10 मिनट बिना विज्ञापन पाएँ। यह दिन में दो बार किया जा सकता है। समय चलने के दौरान या दोनों वीडियो उपयोग हो जाने पर आइकन धूसर हो जाता है।`, q4:`कैट मोड कहाँ है?`, a4:`कैट मोड सेटिंग्स में है और केवल iPad पर दिखता है — फ़ोन की स्क्रीन पंजे के लिए बहुत छोटी है। सत्र से बाहर निकलने के लिए पंजे को 5 सेकंड दबाए रखें।`, q5:`मैं अपना डेटा कैसे मिटाऊँ?`, a5:`ऐप हटा दें। स्कोर और सेटिंग्स केवल आपके डिवाइस पर होती हैं, कुछ भी शेष नहीं रहता।` },
+
+id: { name:"Bahasa Indonesia", title:"Kebijakan Privasi", updated:"Terakhir diperbarui",
+ intro:`Kebijakan ini menjelaskan apa yang dilakukan Reflex Rush ("aplikasi") dengan informasi Anda. Aplikasi ini diterbitkan oleh ${DEVELOPER}. Untuk pertanyaan apa pun, tulis ke <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Apa yang disimpan aplikasi di perangkat Anda", p1:"Skor, tingkat kesulitan yang dipilih, mode permainan, bahasa, tema, volume, dan pengaturan getaran hanya disimpan di perangkat Anda. Data ini tidak pernah dikirim kepada kami dan kami tidak dapat melihatnya. Menghapus aplikasi akan menghapusnya.",
+ h2:"Iklan", p2:`Aplikasi menampilkan iklan melalui Google AdMob. Untuk itu, Google dapat mengumpulkan ID iklan perangkat, alamat IP (yang memberi lokasi perkiraan), iklan yang Anda lihat dan cara Anda berinteraksi, serta data kerusakan dan performa. Data ini tidak pernah sampai kepada kami. Cara Google menggunakannya dijelaskan dalam <a href="https://policies.google.com/privacy">Kebijakan Privasi Google</a>.`,
+ h3:"Izin pelacakan", p3:"Saat pertama kali membuka aplikasi, iOS menanyakan apakah Anda mengizinkan pelacakan. Jika menolak, Anda tetap melihat jumlah iklan yang sama, tetapi tidak dipersonalisasi. Anda dapat mengubahnya kapan saja di Pengaturan iOS → Privasi & Keamanan → Pelacakan.",
+ h4:"Pembelian", p4:"Jika Anda membeli penghapusan iklan, pembayaran sepenuhnya ditangani Apple. Kami tidak pernah melihat nama, detail kartu, atau alamat Anda — hanya apakah pembelian aktif di perangkat Anda.",
+ h5:"Anak-anak", p5:"Aplikasi ini tidak ditujukan untuk anak di bawah 13 tahun dan kami tidak dengan sengaja mengumpulkan data dari mereka. Jika Anda yakin seorang anak telah memberikan data, hubungi kami.",
+ h6:"Hak Anda", p6:"Karena kami tidak menyimpan data pribadi, tidak ada yang perlu diakses atau dihapus di pihak kami. Anda dapat mengatur ulang ID iklan atau menarik persetujuan pelacakan di Pengaturan iOS, dan menghapus semua data lokal dengan menghapus aplikasi.",
+ h7:"Perubahan", p7:"Jika kebijakan ini berubah, versi terbaru akan muncul di halaman ini dengan tanggal baru.",
+ h8:"Kontak", p8:`Pertanyaan tentang kebijakan ini: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Dukungan`, q1:`Bagaimana mendapatkan bantuan?`, a1:`Kirim email ke <a href="mailto:${EMAIL}">${EMAIL}</a> dan jelaskan masalahnya. Menyebutkan model perangkat dan versi iOS sangat membantu.`, q2:`Saya membeli hapus iklan tetapi iklannya kembali`, a2:`Buka Pengaturan di dalam game lalu ketuk Pulihkan Pembelian. Pembelian terkait dengan Akun Apple Anda, jadi ini juga berlaku di perangkat baru.`, q3:`Bagaimana cara kerja menit tanpa iklan?`, a3:`Ketuk ikon hadiah dan tonton video untuk mendapat 10 menit tanpa iklan. Bisa dilakukan dua kali sehari. Ikon menjadi abu-abu selama waktu berjalan atau setelah kedua video terpakai.`, q4:`Di mana Mode Kucing?`, a4:`Mode Kucing ada di Pengaturan dan hanya muncul di iPad — layar ponsel terlalu kecil untuk telapak kaki kucing. Tahan ikon tapak 5 detik untuk keluar.`, q5:`Bagaimana menghapus data saya?`, a5:`Hapus aplikasinya. Skor dan pengaturan hanya tersimpan di perangkat Anda, jadi tidak ada yang tertinggal.` },
+
+ru: { name:"Русский", title:"Политика конфиденциальности", updated:"Последнее обновление",
+ intro:`Эта политика объясняет, что Reflex Rush («приложение») делает с вашей информацией. Приложение публикует ${DEVELOPER}. По любым вопросам пишите на <a href="mailto:${EMAIL}">${EMAIL}</a>.`,
+ h1:"Что приложение хранит на вашем устройстве", p1:"Ваши рекорды, выбранная сложность, режим игры, язык, оформление, громкость и настройка вибрации сохраняются только на вашем устройстве. Они никогда не передаются нам, и мы их не видим. При удалении приложения они стираются.",
+ h2:"Реклама", p2:`Приложение показывает рекламу через Google AdMob. Для этого Google может собирать рекламный идентификатор устройства, IP-адрес (дающий приблизительное местоположение), какие объявления вы видели и как с ними взаимодействовали, а также данные о сбоях и производительности. Мы никогда не получаем эти данные. Как их использует Google, описано в <a href="https://policies.google.com/privacy">Политике конфиденциальности Google</a>.`,
+ h3:"Разрешение на отслеживание", p3:"При первом запуске iOS спрашивает, разрешаете ли вы отслеживание. Если отказаться, объявлений будет столько же, но они не будут персонализированными. Изменить ответ можно в Настройках iOS → Конфиденциальность и безопасность → Отслеживание.",
+ h4:"Покупки", p4:"При покупке отключения рекламы оплату полностью обрабатывает Apple. Мы никогда не видим ваше имя, данные карты или адрес — только то, активна ли покупка на вашем устройстве.",
+ h5:"Дети", p5:"Приложение не предназначено для детей младше 13 лет, и мы сознательно не собираем их данные. Если вы считаете, что ребёнок передал данные, свяжитесь с нами.",
+ h6:"Ваши права", p6:"Поскольку мы не храним персональные данные, у нас нечего запрашивать или удалять. Вы можете сбросить рекламный идентификатор или отозвать согласие на отслеживание в Настройках iOS, а также удалить все локальные данные, удалив приложение.",
+ h7:"Изменения", p7:"При изменении политики обновлённая версия появится на этой странице с новой датой.",
+ h8:"Контакты", p8:`Вопросы по этой политике: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Поддержка`, q1:`Как получить помощь?`, a1:`Напишите на <a href="mailto:${EMAIL}">${EMAIL}</a> и опишите проблему. Укажите модель устройства и версию iOS.`, q2:`Я купил отключение рекламы, но она вернулась`, a2:`Откройте Настройки в игре и нажмите «Восстановить покупки». Покупки привязаны к вашему Apple ID, поэтому это работает и на новом устройстве.`, q3:`Как работают минуты без рекламы?`, a3:`Нажмите значок подарка и посмотрите видео, чтобы получить 10 минут без рекламы. Это доступно дважды в день. Значок становится серым, пока идёт время или когда оба видео израсходованы.`, q4:`Где кошачий режим?`, a4:`Кошачий режим находится в Настройках и доступен только на iPad — экран телефона слишком мал для лапы. Удерживайте лапку 5 секунд, чтобы выйти.`, q5:`Как удалить мои данные?`, a5:`Удалите приложение. Рекорды и настройки хранятся только на вашем устройстве, ничего не остаётся.` },
+
+tr: { name:"Türkçe", title:"Gizlilik Politikası", updated:"Son güncelleme",
+ intro:`Bu politika, Reflex Rush ("uygulama") bilgilerinizle ne yaptığını açıklar. Uygulama ${DEVELOPER} tarafından yayımlanmaktadır. Sorularınız için <a href="mailto:${EMAIL}">${EMAIL}</a> adresine yazabilirsiniz.`,
+ h1:"Uygulamanın cihazınızda sakladıkları", p1:"Puanlarınız, seçtiğiniz zorluk, oyun modu, dil, tema, ses düzeyi ve titreşim ayarı yalnızca cihazınızda saklanır. Bize hiçbir zaman gönderilmez ve göremeyiz. Uygulamayı silmek bunları da siler.",
+ h2:"Reklamlar", p2:`Uygulama, Google AdMob aracılığıyla reklam gösterir. Bunun için Google cihazınızın reklam kimliğini, IP adresini (yaklaşık konum verir), gördüğünüz reklamları ve etkileşimlerinizi, ayrıca çökme ve performans verilerini toplayabilir. Bu veriler bize hiçbir zaman ulaşmaz. Google'ın kullanımı <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>'nda açıklanmıştır.`,
+ h3:"İzleme izni", p3:"Uygulamayı ilk açtığınızda iOS izlemeye izin verip vermediğinizi sorar. Reddederseniz aynı sayıda reklam görürsünüz, ancak kişiselleştirilmiş olmazlar. Yanıtınızı istediğiniz zaman iOS Ayarlar → Gizlilik ve Güvenlik → İzleme bölümünden değiştirebilirsiniz.",
+ h4:"Satın almalar", p4:"Reklamsız sürümü satın alırsanız ödeme tamamen Apple tarafından yürütülür. Adınızı, kart bilgilerinizi veya adresinizi asla görmeyiz — yalnızca satın almanın cihazınızda etkin olup olmadığını.",
+ h5:"Çocuklar", p5:"Uygulama 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek veri toplamayız. Bir çocuğun veri verdiğini düşünüyorsanız bizimle iletişime geçin.",
+ h6:"Haklarınız", p6:"Kişisel veri saklamadığımız için bizde erişilecek veya silinecek bir şey yoktur. Reklam kimliğini sıfırlayabilir veya izleme onayını iOS Ayarlar'dan geri çekebilir, uygulamayı silerek tüm yerel verileri kaldırabilirsiniz.",
+ h7:"Değişiklikler", p7:"Bu politika değişirse, güncellenmiş sürüm yeni bir tarihle bu sayfada yayımlanır.",
+ h8:"İletişim", p8:`Bu politikayla ilgili sorular: <a href="mailto:${EMAIL}">${EMAIL}</a>.`, sup:`Destek`, q1:`Nasıl yardım alabilirim?`, a1:`<a href="mailto:${EMAIL}">${EMAIL}</a> adresine sorunu anlatarak yazın. Cihaz modeli ve iOS sürümünü belirtmeniz yardımcı olur.`, q2:`Reklamları kaldırmayı satın aldım ama geri geldiler`, a2:`Oyundaki Ayarlar'ı açıp Satın Alımları Geri Yükle'ye dokunun. Satın alımlar Apple Hesabınıza bağlıdır, bu yüzden yeni cihazda da çalışır.`, q3:`Reklamsız dakikalar nasıl çalışır?`, a3:`Hediye simgesine dokunup bir video izleyerek 10 dakika reklamsız süre kazanırsınız. Günde iki kez yapılabilir. Süre işlerken veya iki video da kullanıldığında simge griye döner.`, q4:`Kedi Modu nerede?`, a4:`Kedi Modu Ayarlar'dadır ve yalnızca iPad'de görünür — telefon ekranı bir pati için fazla küçüktür. Oturumdan çıkmak için pati simgesini 5 saniye basılı tutun.`, q5:`Verilerimi nasıl silerim?`, a5:`Uygulamayı silin. Puanlar ve ayarlar yalnızca cihazınızda tutulur, geriye hiçbir şey kalmaz.` },
+
+ja: { name:"日本語", title:"プライバシーポリシー", updated:"最終更新日",
+ intro:`本ポリシーは、Reflex Rush（以下「本アプリ」）がお客様の情報をどのように扱うかを説明します。本アプリは ${DEVELOPER} が提供しています。ご質問は <a href="mailto:${EMAIL}">${EMAIL}</a> までお寄せください。`,
+ h1:"本アプリが端末に保存する情報", p1:"スコア、選択した難易度、ゲームモード、言語、外観、音量、バイブレーション設定は、お客様の端末内にのみ保存されます。当方に送信されることはなく、閲覧することもできません。アプリを削除すると消去されます。",
+ h2:"広告について", p2:`本アプリは Google AdMob を通じて広告を表示します。そのため Google は、端末の広告識別子、IP アドレス（おおよその位置情報）、表示された広告と操作内容、クラッシュおよびパフォーマンス情報を収集する場合があります。これらのデータが当方に渡ることはありません。Google による利用については <a href="https://policies.google.com/privacy">Google プライバシーポリシー</a> をご覧ください。`,
+ h3:"トラッキングの許可", p3:"初回起動時に、iOS がトラッキングを許可するかどうかを尋ねます。許可しない場合でも広告の表示回数は変わりませんが、パーソナライズされません。設定はいつでも iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」で変更できます。",
+ h4:"購入について", p4:"広告非表示を購入された場合、決済はすべて Apple が処理します。当方がお名前、カード情報、住所を見ることはなく、購入が端末で有効かどうかのみを把握します。",
+ h5:"お子様について", p5:"本アプリは13歳未満のお子様を対象としておらず、意図的に情報を収集することはありません。お子様が情報を提供したと思われる場合はご連絡ください。",
+ h6:"お客様の権利", p6:"当方は個人データを保持していないため、当方側で開示・削除する対象はありません。広告識別子のリセットやトラッキング同意の撤回は iOS の設定から行え、アプリを削除すればローカルデータはすべて消去されます。",
+ h7:"本ポリシーの変更", p7:"本ポリシーを変更した場合、更新版を新しい日付とともに本ページに掲載します。",
+ h8:"お問い合わせ", p8:`本ポリシーに関するお問い合わせ: <a href="mailto:${EMAIL}">${EMAIL}</a>`, sup:`サポート`, q1:`サポートを受けるには？`, a1:`<a href="mailto:${EMAIL}">${EMAIL}</a> 宛に状況をご記入のうえご連絡ください。端末の機種と iOS のバージョンをお知らせいただけると助かります。`, q2:`広告非表示を購入したのに広告が表示されます`, a2:`ゲーム内の「設定」を開き「購入を復元」をタップしてください。購入は Apple アカウントに紐づくため、新しい端末でも復元できます。`, q3:`広告なしの時間はどう使いますか？`, a3:`ギフトアイコンをタップして動画を視聴すると10分間広告が表示されません。1日2回まで利用できます。時間が進行中、または2回とも使い切るとアイコンは灰色になります。`, q4:`キャットモードはどこですか？`, a4:`キャットモードは「設定」内にあり、iPad でのみ表示されます（スマートフォンの画面は猫の肉球には小さすぎるため）。終了するには肉球を5秒長押ししてください。`, q5:`データを削除するには？`, a5:`アプリを削除してください。スコアと設定は端末内にのみ保存されているため、何も残りません。` }
+};
+
+const ORDER = ["en","it","es","fr","de","pt","hi","id","ru","tr","ja"];
+
+function render(code) {
+  const t = T[code];
+  document.documentElement.lang = code;
+  document.getElementById("content").innerHTML = `
+    <h1>${t.sup}</h1>
+    <p class="meta">Reflex Rush</p>
+    <h2>${t.q1}</h2><p>${t.a1}</p>
+    <h2>${t.q2}</h2><p>${t.a2}</p>
+    <h2>${t.q3}</h2><p>${t.a3}</p>
+    <h2>${t.q4}</h2><p>${t.a4}</p>
+    <h2>${t.q5}</h2><p>${t.a5}</p>
+    <hr style="margin:44px 0;border:none;border-top:1px solid #c7c7cc55">
+    <h1 id="privacy">${t.title}</h1>
+    <p class="meta">Reflex Rush — ${t.updated}: ${UPDATED}</p>
+    <p>${t.intro}</p>
+    <h2>${t.h1}</h2><p>${t.p1}</p>
+    <h2>${t.h2}</h2><p>${t.p2}</p>
+    <h2>${t.h3}</h2><p>${t.p3}</p>
+    <h2>${t.h4}</h2><p>${t.p4}</p>
+    <h2>${t.h5}</h2><p>${t.p5}</p>
+    <h2>${t.h6}</h2><p>${t.p6}</p>
+    <h2>${t.h7}</h2><p>${t.p7}</p>
+    <h2>${t.h8}</h2><p>${t.p8}</p>
+    <footer>${DEVELOPER} — ${UPDATED}</footer>`;
+}
+
+const sel = document.getElementById("lang");
+ORDER.forEach(c => {
+  const o = document.createElement("option");
+  o.value = c; o.textContent = T[c].name; sel.appendChild(o);
+});
+const guess = (navigator.language || "en").slice(0,2).toLowerCase();
+sel.value = T[guess] ? guess : "en";
+sel.addEventListener("change", e => render(e.target.value));
+render(sel.value);
+</script>
+
+</body>
+</html>
